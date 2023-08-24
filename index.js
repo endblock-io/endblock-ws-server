@@ -1,6 +1,6 @@
 const express = require('express');
 const { Web3 } = require('web3')
-
+const cors = require('cors')
 require('dotenv').config()
 
 
@@ -18,6 +18,8 @@ const web3 = new Web3(process.env.RPC)
 
 
 app.use( express.static( __dirname + '/public'))
+app.use(cors());
+
 
 io.on('connection', ( socket ) => {
     console.log(socket.id)
