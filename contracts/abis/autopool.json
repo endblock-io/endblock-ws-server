@@ -1,0 +1,1067 @@
+[
+    {
+    "inputs": [{
+            "internalType": "uint32",
+            "name": "initBlockDelayQty",
+            "type": "uint32"
+        },
+        {
+            "internalType": "uint32",
+            "name": "initBlockDelayQtyDistr",
+            "type": "uint32"
+        },
+        {
+            "internalType": "uint256",
+            "name": "_weiAmount",
+            "type": "uint256"
+        },
+        {
+            "internalType": "uint32",
+            "name": "_factor",
+            "type": "uint32"
+        },
+        {
+            "internalType": "contract IERC_20",
+            "name": "end_token",
+            "type": "address"
+        },
+        {
+            "internalType": "contract IAffiliate",
+            "name": "_affiliate",
+            "type": "address"
+        }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+},
+{
+    "anonymous": false,
+    "inputs": [{
+            "indexed": true,
+            "internalType": "address",
+            "name": "account",
+            "type": "address"
+        },
+        {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "coins",
+            "type": "uint256"
+        },
+        {
+            "indexed": false,
+            "internalType": "uint32",
+            "name": "reward",
+            "type": "uint32"
+        },
+        {
+            "indexed": false,
+            "internalType": "uint32",
+            "name": "state",
+            "type": "uint32"
+        }
+    ],
+    "name": "Awarded",
+    "type": "event"
+},
+{
+    "inputs": [{
+        "internalType": "address",
+        "name": "newafil",
+        "type": "address"
+    }],
+    "name": "changeAffiliate",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "inputs": [{
+        "internalType": "uint256",
+        "name": "newlimit",
+        "type": "uint256"
+    }],
+    "name": "changeBaseLimit",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "inputs": [{
+        "internalType": "uint32",
+        "name": "newBlockDelayQty",
+        "type": "uint32"
+    }],
+    "name": "changeBlockDelayQty",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "inputs": [{
+        "internalType": "uint32",
+        "name": "newBlockDelayQty",
+        "type": "uint32"
+    }],
+    "name": "changeBlockDelayQtyDistr",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "inputs": [{
+        "internalType": "address payable",
+        "name": "newDx",
+        "type": "address"
+    }],
+    "name": "changeDex",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "inputs": [{
+            "internalType": "uint32",
+            "name": "nextFundRate",
+            "type": "uint32"
+        },
+        {
+            "internalType": "uint32",
+            "name": "jpRate",
+            "type": "uint32"
+        },
+        {
+            "internalType": "uint32",
+            "name": "minRate",
+            "type": "uint32"
+        },
+        {
+            "internalType": "uint32",
+            "name": "loanEndRate",
+            "type": "uint32"
+        }
+    ],
+    "name": "changeDistrRateEND",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "inputs": [{
+            "internalType": "uint32",
+            "name": "stEthRate",
+            "type": "uint32"
+        },
+        {
+            "internalType": "uint32",
+            "name": "megaPoolRate",
+            "type": "uint32"
+        },
+        {
+            "internalType": "uint32",
+            "name": "juiStake",
+            "type": "uint32"
+        },
+        {
+            "internalType": "uint32",
+            "name": "affiliateRate",
+            "type": "uint32"
+        },
+        {
+            "internalType": "uint32",
+            "name": "feeRate",
+            "type": "uint32"
+        },
+        {
+            "internalType": "uint32",
+            "name": "dexRate",
+            "type": "uint32"
+        }
+    ],
+    "name": "changeDistrRateETH",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "inputs": [{
+        "internalType": "uint32",
+        "name": "newFactor",
+        "type": "uint32"
+    }],
+    "name": "changeFactor",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "inputs": [{
+        "internalType": "address",
+        "name": "newJP",
+        "type": "address"
+    }],
+    "name": "changeJackPOOL",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "inputs": [{
+        "internalType": "address",
+        "name": "newLo",
+        "type": "address"
+    }],
+    "name": "changeLoanEnd",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "inputs": [{
+        "internalType": "address payable",
+        "name": "newMP",
+        "type": "address"
+    }],
+    "name": "changeMegaPOOL",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "inputs": [{
+        "internalType": "address payable",
+        "name": "newOper",
+        "type": "address"
+    }],
+    "name": "changeOperation",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "inputs": [{
+        "internalType": "address payable",
+        "name": "newStake",
+        "type": "address"
+    }],
+    "name": "changeStakeETH",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "inputs": [{
+        "internalType": "address payable",
+        "name": "newStake",
+        "type": "address"
+    }],
+    "name": "changeStakeJUICE",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "inputs": [{
+        "internalType": "uint256",
+        "name": "newWeiAmount",
+        "type": "uint256"
+    }],
+    "name": "changeWeiAmount",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "inputs": [],
+    "name": "deposit",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+},
+{
+    "inputs": [{
+            "internalType": "address",
+            "name": "destination",
+            "type": "address"
+        },
+        {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+        }
+    ],
+    "name": "emergencyWithdraw",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "inputs": [{
+            "internalType": "bytes32",
+            "name": "role",
+            "type": "bytes32"
+        },
+        {
+            "internalType": "address",
+            "name": "account",
+            "type": "address"
+        }
+    ],
+    "name": "grantRole",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "inputs": [{
+            "internalType": "address",
+            "name": "_jackpot",
+            "type": "address"
+        },
+        {
+            "internalType": "address payable",
+            "name": "_ethStake",
+            "type": "address"
+        },
+        {
+            "internalType": "address payable",
+            "name": "_juiStake",
+            "type": "address"
+        },
+        {
+            "internalType": "address payable",
+            "name": "_megaPool",
+            "type": "address"
+        },
+        {
+            "internalType": "address payable",
+            "name": "_operation",
+            "type": "address"
+        },
+        {
+            "internalType": "address",
+            "name": "_loanEnd",
+            "type": "address"
+        },
+        {
+            "internalType": "address payable",
+            "name": "_dex",
+            "type": "address"
+        }
+    ],
+    "name": "initAddress",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "anonymous": false,
+    "inputs": [{
+            "indexed": true,
+            "internalType": "address",
+            "name": "account",
+            "type": "address"
+        },
+        {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+        },
+        {
+            "indexed": true,
+            "internalType": "address",
+            "name": "affiliator",
+            "type": "address"
+        },
+        {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "feeAfiliate",
+            "type": "uint256"
+        },
+        {
+            "indexed": true,
+            "internalType": "uint256",
+            "name": "tokenId",
+            "type": "uint256"
+        },
+        {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "deposit",
+            "type": "uint256"
+        }
+    ],
+    "name": "NewDeposit",
+    "type": "event"
+},
+{
+    "inputs": [],
+    "name": "pause",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "anonymous": false,
+    "inputs": [{
+        "indexed": false,
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+    }],
+    "name": "Paused",
+    "type": "event"
+},
+{
+    "inputs": [],
+    "name": "receiveFromContract",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+},
+{
+    "inputs": [{
+            "internalType": "bytes32",
+            "name": "role",
+            "type": "bytes32"
+        },
+        {
+            "internalType": "address",
+            "name": "account",
+            "type": "address"
+        }
+    ],
+    "name": "renounceRole",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "inputs": [{
+            "internalType": "bytes32",
+            "name": "role",
+            "type": "bytes32"
+        },
+        {
+            "internalType": "address",
+            "name": "account",
+            "type": "address"
+        }
+    ],
+    "name": "revokeRole",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "anonymous": false,
+    "inputs": [{
+            "indexed": true,
+            "internalType": "bytes32",
+            "name": "role",
+            "type": "bytes32"
+        },
+        {
+            "indexed": true,
+            "internalType": "bytes32",
+            "name": "previousAdminRole",
+            "type": "bytes32"
+        },
+        {
+            "indexed": true,
+            "internalType": "bytes32",
+            "name": "newAdminRole",
+            "type": "bytes32"
+        }
+    ],
+    "name": "RoleAdminChanged",
+    "type": "event"
+},
+{
+    "anonymous": false,
+    "inputs": [{
+            "indexed": true,
+            "internalType": "bytes32",
+            "name": "role",
+            "type": "bytes32"
+        },
+        {
+            "indexed": true,
+            "internalType": "address",
+            "name": "account",
+            "type": "address"
+        },
+        {
+            "indexed": true,
+            "internalType": "address",
+            "name": "sender",
+            "type": "address"
+        }
+    ],
+    "name": "RoleGranted",
+    "type": "event"
+},
+{
+    "anonymous": false,
+    "inputs": [{
+            "indexed": true,
+            "internalType": "bytes32",
+            "name": "role",
+            "type": "bytes32"
+        },
+        {
+            "indexed": true,
+            "internalType": "address",
+            "name": "account",
+            "type": "address"
+        },
+        {
+            "indexed": true,
+            "internalType": "address",
+            "name": "sender",
+            "type": "address"
+        }
+    ],
+    "name": "RoleRevoked",
+    "type": "event"
+},
+{
+    "anonymous": false,
+    "inputs": [{
+            "indexed": true,
+            "internalType": "address",
+            "name": "poolID",
+            "type": "address"
+        },
+        {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "blockNumber",
+            "type": "uint256"
+        },
+        {
+            "indexed": false,
+            "internalType": "uint32",
+            "name": "status",
+            "type": "uint32"
+        }
+    ],
+    "name": "StateChanged",
+    "type": "event"
+},
+{
+    "inputs": [],
+    "name": "unpause",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "anonymous": false,
+    "inputs": [{
+        "indexed": false,
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+    }],
+    "name": "Unpaused",
+    "type": "event"
+},
+{
+    "inputs": [],
+    "name": "withdraw",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "anonymous": false,
+    "inputs": [{
+            "indexed": true,
+            "internalType": "address",
+            "name": "account",
+            "type": "address"
+        },
+        {
+            "indexed": false,
+            "internalType": "uint256",
+            "name": "coins",
+            "type": "uint256"
+        }
+    ],
+    "name": "Withdrawed",
+    "type": "event"
+},
+{
+    "stateMutability": "payable",
+    "type": "fallback"
+},
+{
+    "inputs": [{
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+    }],
+    "name": "updateFromContract",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "inputs": [],
+    "name": "updatePool",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+},
+{
+    "stateMutability": "payable",
+    "type": "receive"
+},
+{
+    "inputs": [],
+    "name": "ADMIN_ROLE",
+    "outputs": [{
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+},
+{
+    "inputs": [],
+    "name": "affiliates",
+    "outputs": [{
+        "internalType": "contract IAffiliate",
+        "name": "",
+        "type": "address"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+},
+{
+    "inputs": [{
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+    }],
+    "name": "balanceTickets",
+    "outputs": [{
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+},
+{
+    "inputs": [],
+    "name": "cfg_rate_end",
+    "outputs": [{
+            "internalType": "uint32",
+            "name": "nextFundRate",
+            "type": "uint32"
+        },
+        {
+            "internalType": "uint32",
+            "name": "jpRate",
+            "type": "uint32"
+        },
+        {
+            "internalType": "uint32",
+            "name": "minRate",
+            "type": "uint32"
+        },
+        {
+            "internalType": "uint32",
+            "name": "loanEndRate",
+            "type": "uint32"
+        }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+},
+{
+    "inputs": [],
+    "name": "cfg_rate_eth",
+    "outputs": [{
+            "internalType": "uint32",
+            "name": "stEthRate",
+            "type": "uint32"
+        },
+        {
+            "internalType": "uint32",
+            "name": "megaPoolRate",
+            "type": "uint32"
+        },
+        {
+            "internalType": "uint32",
+            "name": "stJuiRate",
+            "type": "uint32"
+        },
+        {
+            "internalType": "uint32",
+            "name": "affiliateRate",
+            "type": "uint32"
+        },
+        {
+            "internalType": "uint32",
+            "name": "feeRate",
+            "type": "uint32"
+        },
+        {
+            "internalType": "uint32",
+            "name": "dexRate",
+            "type": "uint32"
+        }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+},
+{
+    "inputs": [],
+    "name": "config",
+    "outputs": [{
+            "internalType": "uint32",
+            "name": "blockDelayQty",
+            "type": "uint32"
+        },
+        {
+            "internalType": "uint32",
+            "name": "blockDelayQtyDistr",
+            "type": "uint32"
+        },
+        {
+            "internalType": "uint256",
+            "name": "weiAmount",
+            "type": "uint256"
+        },
+        {
+            "internalType": "uint256",
+            "name": "baseLimit",
+            "type": "uint256"
+        },
+        {
+            "internalType": "uint32",
+            "name": "factor",
+            "type": "uint32"
+        }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+},
+{
+    "inputs": [],
+    "name": "current",
+    "outputs": [{
+            "internalType": "address",
+            "name": "last_account",
+            "type": "address"
+        },
+        {
+            "internalType": "uint256",
+            "name": "initBlock",
+            "type": "uint256"
+        },
+        {
+            "internalType": "uint256",
+            "name": "initBlockDistr",
+            "type": "uint256"
+        },
+        {
+            "internalType": "uint256",
+            "name": "last_tokenId",
+            "type": "uint256"
+        },
+        {
+            "internalType": "uint256",
+            "name": "first_tokenId",
+            "type": "uint256"
+        },
+        {
+            "internalType": "uint256",
+            "name": "currentPoolAmount",
+            "type": "uint256"
+        }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+},
+{
+    "inputs": [],
+    "name": "DEFAULT_ADMIN_ROLE",
+    "outputs": [{
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+},
+{
+    "inputs": [],
+    "name": "endtoken",
+    "outputs": [{
+        "internalType": "contract IERC_20",
+        "name": "",
+        "type": "address"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+},
+{
+    "inputs": [],
+    "name": "extern",
+    "outputs": [{
+            "internalType": "address payable",
+            "name": "ethStake",
+            "type": "address"
+        },
+        {
+            "internalType": "address payable",
+            "name": "megapool",
+            "type": "address"
+        },
+        {
+            "internalType": "address payable",
+            "name": "juiStake",
+            "type": "address"
+        },
+        {
+            "internalType": "address payable",
+            "name": "dex",
+            "type": "address"
+        },
+        {
+            "internalType": "address payable",
+            "name": "operation",
+            "type": "address"
+        },
+        {
+            "internalType": "address",
+            "name": "jackpot",
+            "type": "address"
+        },
+        {
+            "internalType": "address",
+            "name": "loanEnd",
+            "type": "address"
+        }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+},
+{
+    "inputs": [],
+    "name": "getCurrentValues",
+    "outputs": [{
+        "components": [{
+                "internalType": "bool",
+                "name": "ok",
+                "type": "bool"
+            },
+            {
+                "internalType": "enum HelperAutoPOOL.State",
+                "name": "status",
+                "type": "uint8"
+            },
+            {
+                "internalType": "address",
+                "name": "lastAccount",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "blLeft",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "blLeftDistr",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "reward",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "nextFund",
+                "type": "uint256"
+            }
+        ],
+        "internalType": "struct HelperAutoPOOL.STATUS",
+        "name": "st",
+        "type": "tuple"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+},
+{
+    "inputs": [{
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+    }],
+    "name": "getPendingAwards",
+    "outputs": [{
+        "internalType": "uint256",
+        "name": "balance",
+        "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+},
+{
+    "inputs": [],
+    "name": "getPreviousRound",
+    "outputs": [{
+            "internalType": "bool",
+            "name": "ok",
+            "type": "bool"
+        },
+        {
+            "components": [{
+                    "internalType": "bool",
+                    "name": "ok",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "address",
+                    "name": "lastAccount",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "reward",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "nextFund",
+                    "type": "uint256"
+                }
+            ],
+            "internalType": "struct HelperAutoPOOL.PREVSTATUS",
+            "name": "st",
+            "type": "tuple"
+        }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+},
+{
+    "inputs": [{
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+    }],
+    "name": "getRoleAdmin",
+    "outputs": [{
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+},
+{
+    "inputs": [],
+    "name": "getTicketQTY",
+    "outputs": [{
+        "internalType": "uint32",
+        "name": "",
+        "type": "uint32"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+},
+{
+    "inputs": [{
+            "internalType": "bytes32",
+            "name": "role",
+            "type": "bytes32"
+        },
+        {
+            "internalType": "address",
+            "name": "account",
+            "type": "address"
+        }
+    ],
+    "name": "hasRole",
+    "outputs": [{
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+},
+{
+    "inputs": [],
+    "name": "isLocked",
+    "outputs": [{
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+},
+{
+    "inputs": [],
+    "name": "lastTicketID",
+    "outputs": [{
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+},
+{
+    "inputs": [{
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+    }],
+    "name": "ownedTickets",
+    "outputs": [{
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+},
+{
+    "inputs": [],
+    "name": "paused",
+    "outputs": [{
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+},
+{
+    "inputs": [{
+        "internalType": "bytes4",
+        "name": "interfaceId",
+        "type": "bytes4"
+    }],
+    "name": "supportsInterface",
+    "outputs": [{
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+    }],
+    "stateMutability": "view",
+    "type": "function"
+}
+]
