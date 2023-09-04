@@ -12,23 +12,30 @@ const app = express();
 
 const server = require('http').createServer(app);
 
-const io = require('socket.io')(server)
+const io = require('socket.io')(server,{   cors: {
+    origin: "*",
+    methods: ["GET", "POST"]
+  }
+ })
+
 
 const web3 = new Web3(process.env.RPC)
 
-
-app.use( express.static( __dirname + '/public'))
 app.use(cors());
+app.use( express.static( __dirname + '/public'))
+
 
 
 io.on('connection', ( socket ) => {
     console.log(socket.id)
 
-
-    setInterval(() => {
-        socket.emit('connected', 'welcome')
+    
+    setInterval(async() => {
+        const response = await pools.poolDatas(web3)
+console.log("emited")
+        io.emit('get-pools', JSON.stringify(response))
         
-    }, 2000);
+    }, 2500);
 
 
 
@@ -36,7 +43,7 @@ io.on('connection', ( socket ) => {
 
 server.listen(process.env.PORT,async()=>{
     console.log('port:',process.env.PORT)
-//    const response = await pools.poolDatas(web3)
-   const response = await jackpool.jackPoolData(web3)
-    console.log(response)
+    // const response = await pools.poolDatas(web3)
+//    const response = await jackpool.jackPoolData(web3)
+    // console.log(response)
 })

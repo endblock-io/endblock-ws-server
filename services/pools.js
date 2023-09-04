@@ -23,25 +23,55 @@ const chainId = process.env.CHAIN_ID;
 
     return {
         currentValues:{
-            lastAccount:currentValues.lastAccount,
-            blLeft:currentValues.blLeft,
-            blLeftDistr:currentValues.blLeftDistr,
-            reward:currentValues.reward,
-            nextFund:currentValues.nextFund,
+
+
+
+            fee: currentValues.fee?.toString(),
+            rewards: currentValues.rewards?.map(e => e.toString()) || [],
+            status: currentValues.status?.toString(),
+
+
+
+            lastAccount:currentValues.lastAccount?.toString(),
+            blLeft:currentValues.blLeft?.toString(),
+            blLeftDistr:currentValues.blLeftDistr?.toString(),
+            reward:currentValues.reward?.toString(),
+            nextFund:currentValues.nextFund?.toString(),
+            net:currentValues.net?.toString(),
+            stake:currentValues.stake?.toString(),
+
         },
         current:{
-            last_account:current.last_account, 
-            initBlock:current.initBlock, 
-            initBlockDistr:current.initBlockDistr, 
-            last_tokenId:current.last_tokenId, 
-            first_tokenId:current.first_tokenId, 
-            currentPoolAmount:current.currentPoolAmount,
+            last_account:current.last_account?.toString(), 
+            initBlock:current.initBlock?.toString(), 
+            initBlockDistr:current.initBlockDistr?.toString(), 
+            last_tokenId:current.last_tokenId?.toString(), 
+            first_tokenId:current.first_tokenId?.toString(), 
+            currentPoolAmount:current.currentPoolAmount?.toString(),
         },
         PreviousRoundResponse: {
-            ...previousRoundResponse
+            st: {
+                net: previousRoundResponse.st.net?.toString() || '' ,
+                nextFund: previousRoundResponse.st.nextFund?.toString() || '',
+                rewards: previousRoundResponse.st.rewards?.map(e => e.toString()) || [],
+                lastAccount: previousRoundResponse.st.lastAccount,
+                reward: previousRoundResponse.st.reward?.toString() || '',
+            },
+            winTickets: previousRoundResponse?.winTickets || [],
+            winners: previousRoundResponse?.winners || []
         },
         config:{
-        ...config
+            blockDelayQty: config.blockDelayQty?.toString() || '',
+            blockDelayQtyDistr: config.blockDelayQtyDistr?.toString() || '',
+            weiAmount: config.weiAmount?.toString() || '',
+            baseLimit: config.baseLimit?.toString() || '',
+            factor: config.factor?.toString() || '',
+            nextFundRate: config.nextFundRate?.toString() || '',
+            affiliateRate: config.affiliateRate?.toString() || '',
+            feeRate: config.feeRate?.toString() || '',
+            stakeRate: config.stakeRate?.toString() || '',
+            strewRate: config.strewRate?.toString() || '',
+            rateQty: config.rateQty?.toString() || '',
         },
         isLock:isLock,
     }
