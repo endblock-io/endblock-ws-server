@@ -23,15 +23,9 @@ const chainId = process.env.CHAIN_ID;
 
     return {
         currentValues:{
-
-
-
             fee: currentValues.fee?.toString(),
             rewards: currentValues.rewards?.map(e => e.toString()) || [],
             status: currentValues.status?.toString(),
-
-
-
             lastAccount:currentValues.lastAccount?.toString(),
             blLeft:currentValues.blLeft?.toString(),
             blLeftDistr:currentValues.blLeftDistr?.toString(),
@@ -57,7 +51,7 @@ const chainId = process.env.CHAIN_ID;
                 lastAccount: previousRoundResponse.st.lastAccount,
                 reward: previousRoundResponse.st.reward?.toString() || '',
             },
-            winTickets: previousRoundResponse?.winTickets || [],
+            winTickets: previousRoundResponse?.winTickets?.map(e => e.toString()) || [],
             winners: previousRoundResponse?.winners || []
         },
         config:{

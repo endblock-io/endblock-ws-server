@@ -26,16 +26,31 @@ app.use( express.static( __dirname + '/public'))
 
 
 
+let response = {};
+
+setInterval(async() => {
+    try {
+        response = await pools.poolDatas(web3)
+    } catch (error) {
+        console.log(error)
+    }
+     
+    
+}, 2500);
 
 io.on('connection', ( socket ) => {
     console.log(socket.id)
 
     
     setInterval(async() => {
-        const response = await pools.poolDatas(web3)
-console.log("emited")
+
+        try {
         io.emit('get-pools', JSON.stringify(response))
-        
+            // console.log(response.lottoPool.PreviousRoundResponse)
+        } catch (error) {
+            console.log(error, response.lottoPool.PreviousRoundResponse)
+        }
+
     }, 2500);
 
 
