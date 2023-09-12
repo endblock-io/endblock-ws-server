@@ -3,25 +3,25 @@
      autoPools : {
         autoPool1: {
             80001:'0x427F888F7E136442A2118BfD1F2dbC4DC6760554',
-            137:''
+            137:'0xbA8273E1EAD749FCf9f7A74737d33C0F00945274'
         },
         autoPool2: {
             80001:'0x16C328285BeFd46c4A81a201f5acE1734a5Fd0AF',
-            137:''
+            137:'0x59b95cD8AAD6b4d11Ba5898BB9550D11a78d1238'
         },
         autoPool3: {
             80001:'0xC820dD023bf7aC0FeBfB4232cC81FDB056b670DA',
-            137:''
+            137:'0xC77E31C293BA22381121cf588580D85F36d6A62f'
         },
     
     },
    lottoPool : {
         80001:'0x4bfbEB97648912B8C90406eF78C3397CaFd79Ea1',
-        137:''
+        137:'0x35D12b57Ff28a6a4B0f00412cfE005Dc8EA27b4A'
     } ,
     end:{
         80001: '0x8BEbcD85a7F99679be82eD11d61a52020EFAfB4C',
-        137: ''
+        137: '0x0C087f8D6A1F14F71bB7Cc7E1B061CA297AF7555'
     },
     loansEnd1: {
         80001: '0x6DAb0e8A9CaE532EAd35e96DE27D4d99506c9FcC',

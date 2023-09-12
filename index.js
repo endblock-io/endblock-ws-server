@@ -5,7 +5,7 @@ require('dotenv').config()
 
 
 const pools = require('./services/pools')
-const jackpool = require('./services/jackpool')
+
 
 
 const app = express();
@@ -47,16 +47,14 @@ setInterval(async() => {
 
     try {
     io.emit('get-pools', JSON.stringify(response))
-    console.log('emited')
+    console.log('emited',response)
     } catch (error) {
-        console.log(error, response.lottoPool.PreviousRoundResponse)
+        console.log(error)
     }
 
-}, 3000);
+}, 2500);
 
 server.listen(process.env.PORT,async()=>{
     console.log('port:',process.env.PORT)
-    // const response = await pools.poolDatas(web3)
-//    const response = await jackpool.jackPoolData(web3)
-    // console.log(response)
+
 })
