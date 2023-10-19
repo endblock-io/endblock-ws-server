@@ -44,13 +44,11 @@ const chainId = process.env.CHAIN_ID;
             currentPoolAmount:current.currentPoolAmount?.toString(),
         },
         PreviousRoundResponse: {
-            st: {
-                net: previousRoundResponse.st.net?.toString() || '' ,
-                nextFund: previousRoundResponse.st.nextFund?.toString() || '',
-                rewards: previousRoundResponse.st.rewards?.map(e => e.toString()) || [],
-                lastAccount: previousRoundResponse.st.lastAccount,
-                reward: previousRoundResponse.st.reward?.toString() || '',
-            },
+            net: previousRoundResponse.net?.toString() || '' ,
+            nextFund: previousRoundResponse.nextFund?.toString() || '',
+            rewards: previousRoundResponse.rewards?.map(e => e.toString()) || [],
+            lastAccount: previousRoundResponse.lastAccount,
+            reward: previousRoundResponse.reward?.toString() || '',
             winTickets: previousRoundResponse?.winTickets?.map(e => e.toString()) || [],
             winners: previousRoundResponse?.winners || []
         },
@@ -78,16 +76,20 @@ const poolDatas = async (web3) => {
 
     const response = await Promise.all(
         [
-        poolData(abi,addresses.autoPools.autoPool1[chainId],web3),
-        poolData(abi,addresses.autoPools.autoPool2[chainId],web3),
-        poolData(abi,addresses.autoPools.autoPool3[chainId],web3),
+        poolData(abi,addresses.autoPools.autoPOOL1v5[chainId],web3),
+        poolData(abi,addresses.autoPools.autoPOOL2v5[chainId],web3),
+        poolData(abi,addresses.autoPools.autoPOOL3v5[chainId],web3),
+        poolData(abi,addresses.autoPools.autoPOOL4v5[chainId],web3),
+        poolData(abi,addresses.autoPools.autoPOOL5v5[chainId],web3),
         poolData(lottoAbi,addresses.lottoPool[chainId],web3),
     ])
     return {
-        pool1:response[0],
-        pool2:response[1],
-        pool3:response[2],
-        lottoPool:response[3],
+        autoPOOL1v5:response[0],
+        autoPOOL2v5:response[1],
+        autoPOOL3v5:response[2],
+        autoPOOL4v5:response[3],
+        autoPOOL5v5:response[4],
+        lottoPool:response[5],
     }
 
 }
