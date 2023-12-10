@@ -17,8 +17,18 @@
 				"type": "uint256"
 			},
 			{
+				"internalType": "uint256",
+				"name": "_weiAmountEnd",
+				"type": "uint256"
+			},
+			{
 				"internalType": "uint32[]",
 				"name": "probRates",
+				"type": "uint32[]"
+			},
+			{
+				"internalType": "uint32[]",
+				"name": "probRatesEnd",
 				"type": "uint32[]"
 			},
 			{
@@ -34,6 +44,11 @@
 		],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "ReentrancyGuardReentrantCall",
+		"type": "error"
 	},
 	{
 		"anonymous": false,
@@ -67,276 +82,6 @@
 		"type": "event"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "newafil",
-				"type": "address"
-			}
-		],
-		"name": "changeAffiliate",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint32",
-				"name": "affiliateRate",
-				"type": "uint32"
-			}
-		],
-		"name": "changeAffiliateRateETH",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "newlimit",
-				"type": "uint256"
-			}
-		],
-		"name": "changeBaseLimit",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint32",
-				"name": "newBlockDelayQty",
-				"type": "uint32"
-			}
-		],
-		"name": "changeBlockDelayQty",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint32",
-				"name": "newBlockDelayQty",
-				"type": "uint32"
-			}
-		],
-		"name": "changeBlockDelayQtyDistr",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address payable",
-				"name": "newdistr",
-				"type": "address"
-			}
-		],
-		"name": "changeDistributorETH",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint32",
-				"name": "nextFundRate",
-				"type": "uint32"
-			},
-			{
-				"internalType": "uint32",
-				"name": "jpRate",
-				"type": "uint32"
-			},
-			{
-				"internalType": "uint32",
-				"name": "minRate",
-				"type": "uint32"
-			},
-			{
-				"internalType": "uint32",
-				"name": "loanEndRate",
-				"type": "uint32"
-			},
-			{
-				"internalType": "uint32",
-				"name": "loanEndLottoRate",
-				"type": "uint32"
-			},
-			{
-				"internalType": "uint32",
-				"name": "edyEndLottoRate",
-				"type": "uint32"
-			}
-		],
-		"name": "changeDistrRateEND",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "newst",
-				"type": "address"
-			}
-		],
-		"name": "changeEndegyEND",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "newJP",
-				"type": "address"
-			}
-		],
-		"name": "changeJackPOOL",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "newLo",
-				"type": "address"
-			}
-		],
-		"name": "changeLoanEnd",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address payable",
-				"name": "newOper",
-				"type": "address"
-			}
-		],
-		"name": "changeOperation",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint32[]",
-				"name": "newrates",
-				"type": "uint32[]"
-			}
-		],
-		"name": "changeProbRates",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "newWeiAmount",
-				"type": "uint256"
-			}
-		],
-		"name": "changeWeiAmount",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "deposit",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "destination",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			}
-		],
-		"name": "emergencyWithdraw",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "role",
-				"type": "bytes32"
-			},
-			{
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			}
-		],
-		"name": "grantRole",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address payable",
-				"name": "_distributor",
-				"type": "address"
-			},
-			{
-				"internalType": "address payable",
-				"name": "_operation",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "_jackpot",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "_loanEnd",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "_edyEND",
-				"type": "address"
-			}
-		],
-		"name": "initAddress",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
 		"anonymous": false,
 		"inputs": [
 			{
@@ -368,17 +113,16 @@
 				"internalType": "uint256",
 				"name": "deposit",
 				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "isEndDeposit",
+				"type": "bool"
 			}
 		],
 		"name": "NewDeposit",
 		"type": "event"
-	},
-	{
-		"inputs": [],
-		"name": "pause",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
 	},
 	{
 		"anonymous": false,
@@ -392,49 +136,6 @@
 		],
 		"name": "Paused",
 		"type": "event"
-	},
-	{
-		"inputs": [],
-		"name": "receiveFromContract",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "role",
-				"type": "bytes32"
-			},
-			{
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			}
-		],
-		"name": "renounceRole",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "bytes32",
-				"name": "role",
-				"type": "bytes32"
-			},
-			{
-				"internalType": "address",
-				"name": "account",
-				"type": "address"
-			}
-		],
-		"name": "revokeRole",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
 	},
 	{
 		"anonymous": false,
@@ -512,19 +213,6 @@
 		"type": "event"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "bool",
-				"name": "enabled",
-				"type": "bool"
-			}
-		],
-		"name": "setRestrictCurrBlock",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
 		"anonymous": false,
 		"inputs": [
 			{
@@ -587,45 +275,33 @@
 	},
 	{
 		"inputs": [],
-		"name": "unpause",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
+		"name": "ADMIN_ROLE",
+		"outputs": [
 			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
 			}
 		],
-		"name": "updateFromContract",
-		"outputs": [],
-		"stateMutability": "nonpayable",
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
 		"inputs": [],
-		"name": "updatePool",
-		"outputs": [],
-		"stateMutability": "nonpayable",
+		"name": "DEFAULT_ADMIN_ROLE",
+		"outputs": [
+			{
+				"internalType": "bytes32",
+				"name": "",
+				"type": "bytes32"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
 		"inputs": [],
-		"name": "withdraw",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"stateMutability": "payable",
-		"type": "receive"
-	},
-	{
-		"inputs": [],
-		"name": "ADMIN_ROLE",
+		"name": "DLG_PLAYER_ROLE",
 		"outputs": [
 			{
 				"internalType": "bytes32",
@@ -650,41 +326,195 @@
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "cfg_rate_end",
-		"outputs": [
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newafil",
+				"type": "address"
+			}
+		],
+		"name": "changeAffiliate",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
 			{
 				"internalType": "uint32",
-				"name": "nextFundRate",
-				"type": "uint32"
-			},
-			{
-				"internalType": "uint32",
-				"name": "jpRate",
-				"type": "uint32"
-			},
-			{
-				"internalType": "uint32",
-				"name": "minRate",
-				"type": "uint32"
-			},
-			{
-				"internalType": "uint32",
-				"name": "loanEndRate",
-				"type": "uint32"
-			},
-			{
-				"internalType": "uint32",
-				"name": "loanEndLottoRate",
-				"type": "uint32"
-			},
-			{
-				"internalType": "uint32",
-				"name": "edyEndLottoRate",
+				"name": "affiliateRate",
 				"type": "uint32"
 			}
 		],
-		"stateMutability": "view",
+		"name": "changeAffiliateRateETH",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "newlimit",
+				"type": "uint256"
+			}
+		],
+		"name": "changeBaseLimit",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint32",
+				"name": "newBlockDelayQty",
+				"type": "uint32"
+			}
+		],
+		"name": "changeBlockDelayQty",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint32",
+				"name": "newBlockDelayQty",
+				"type": "uint32"
+			}
+		],
+		"name": "changeBlockDelayQtyDistr",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "newdistr",
+				"type": "address"
+			}
+		],
+		"name": "changeDistributorAuto",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "newdistr",
+				"type": "address"
+			}
+		],
+		"name": "changeDistributorETH",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newst",
+				"type": "address"
+			}
+		],
+		"name": "changeEndegyEND",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newg",
+				"type": "address"
+			}
+		],
+		"name": "changeGuard",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newJP",
+				"type": "address"
+			}
+		],
+		"name": "changeJackPOOL",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newLo",
+				"type": "address"
+			}
+		],
+		"name": "changeLoanEnd",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "newOper",
+				"type": "address"
+			}
+		],
+		"name": "changeOperation",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint32[]",
+				"name": "newrates",
+				"type": "uint32[]"
+			},
+			{
+				"internalType": "bool",
+				"name": "setEndProbs",
+				"type": "bool"
+			}
+		],
+		"name": "changeProbRates",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "newWeiAmount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "newWeiAmountEnd",
+				"type": "uint256"
+			}
+		],
+		"name": "changeWeiAmount",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -719,6 +549,11 @@
 			{
 				"internalType": "uint256",
 				"name": "baseLimit",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "weiAmountEND",
 				"type": "uint256"
 			}
 		],
@@ -755,15 +590,60 @@
 	},
 	{
 		"inputs": [],
-		"name": "DEFAULT_ADMIN_ROLE",
-		"outputs": [
+		"name": "deposit",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "depositEnd",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
 			{
-				"internalType": "bytes32",
-				"name": "",
-				"type": "bytes32"
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
 			}
 		],
-		"stateMutability": "view",
+		"name": "depositEndFrom",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "depositFrom",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "destination",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "emergencyWithdraw",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -806,6 +686,11 @@
 			{
 				"internalType": "address",
 				"name": "edyEnd",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "distrAuto",
 				"type": "address"
 			}
 		],
@@ -896,16 +781,6 @@
 						"internalType": "uint256",
 						"name": "nextFund",
 						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "loanEndLotto",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "edyEndLotto",
-						"type": "uint256"
 					}
 				],
 				"internalType": "struct HelperAutoPOOL.PREVSTATUS",
@@ -919,6 +794,19 @@
 	{
 		"inputs": [],
 		"name": "getProbRates",
+		"outputs": [
+			{
+				"internalType": "uint32[]",
+				"name": "",
+				"type": "uint32[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getProbRatesEND",
 		"outputs": [
 			{
 				"internalType": "uint32[]",
@@ -961,6 +849,24 @@
 				"type": "address"
 			}
 		],
+		"name": "grantRole",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "role",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
 		"name": "hasRole",
 		"outputs": [
 			{
@@ -970,6 +876,49 @@
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address payable",
+				"name": "_distributor",
+				"type": "address"
+			},
+			{
+				"internalType": "address payable",
+				"name": "_operation",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_jackpot",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_loanEnd",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_edyEND",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_black",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_distrAuto",
+				"type": "address"
+			}
+		],
+		"name": "initAddress",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -987,6 +936,13 @@
 	},
 	{
 		"inputs": [],
+		"name": "pause",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "paused",
 		"outputs": [
 			{
@@ -996,6 +952,75 @@
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "receiveEndFromContract",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "receiveFromContract",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "role",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "renounceRole",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes32",
+				"name": "role",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "revokeRole",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bool",
+				"name": "enabled",
+				"type": "bool"
+			}
+		],
+		"name": "setRestrictCurrBlock",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -1016,5 +1041,43 @@
 		],
 		"stateMutability": "view",
 		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "unpause",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "updateFromContract",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "updatePool",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "withdraw",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"stateMutability": "payable",
+		"type": "receive"
 	}
 ]

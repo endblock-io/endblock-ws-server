@@ -82,7 +82,9 @@ const poolDatas = async (web3) => {
         poolData(abi,addresses.autoPools.autoPOOL4v5[chainId],web3),
         poolData(abi,addresses.autoPools.autoPOOL5v5[chainId],web3),
         poolData(lottoAbi,addresses.lottoPool[chainId],web3),
+        poolData(lottoAbi,addresses.lottoPoolWinter[chainId],web3),
     ])
+
     return {
         autoPOOL1v5:response[0],
         autoPOOL2v5:response[1],
@@ -90,6 +92,7 @@ const poolDatas = async (web3) => {
         autoPOOL4v5:response[3],
         autoPOOL5v5:response[4],
         lottoPool:response[5],
+        lottoPoolWinter:response[6],
     }
 
 }

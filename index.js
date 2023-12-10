@@ -47,7 +47,7 @@ setInterval(async() => {
 
     try {
     io.emit('get-pools', JSON.stringify(response))
-    // console.log('emited',response)
+    console.log('emited',response)
     } catch (error) {
         console.log(error)
     }
