@@ -76,23 +76,23 @@ const poolDatas = async (web3) => {
 
     const response = await Promise.all(
         [
-        poolData(abi,addresses.autoPools.autoPOOL1v5[chainId],web3),
-        poolData(abi,addresses.autoPools.autoPOOL2v5[chainId],web3),
-        poolData(abi,addresses.autoPools.autoPOOL3v5[chainId],web3),
-        poolData(abi,addresses.autoPools.autoPOOL4v5[chainId],web3),
-        poolData(abi,addresses.autoPools.autoPOOL5v5[chainId],web3),
-        poolData(lottoAbi,addresses.lottoPool[chainId],web3),
+        // poolData(abi,addresses.autoPools.autoPOOL1v5[chainId],web3),
+        // poolData(abi,addresses.autoPools.autoPOOL2v5[chainId],web3),
+        // poolData(abi,addresses.autoPools.autoPOOL3v5[chainId],web3),
+        // poolData(abi,addresses.autoPools.autoPOOL4v5[chainId],web3),
+        // poolData(abi,addresses.autoPools.autoPOOL5v5[chainId],web3),
+        // poolData(lottoAbi,addresses.lottoPool[chainId],web3),
         poolData(lottoAbi,addresses.lottoPoolWinter[chainId],web3),
     ])
 
     return {
-        autoPOOL1v5:response[0],
-        autoPOOL2v5:response[1],
-        autoPOOL3v5:response[2],
-        autoPOOL4v5:response[3],
-        autoPOOL5v5:response[4],
-        lottoPool:response[5],
-        lottoPoolWinter:response[6],
+        // autoPOOL1v5:response[0],
+        // autoPOOL2v5:response[1],
+        // autoPOOL3v5:response[2],
+        // autoPOOL4v5:response[3],
+        // autoPOOL5v5:response[4],
+        // lottoPool:response[5],
+        lottoPoolWinter:response[0],
     }
 
 }

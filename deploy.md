@@ -9,3 +9,9 @@ sudo scp -i key/keypair-endblock.pem /Users/jorgealcazar/Documents/GitHub/endblo
 cp /tmp/endblock-ws-server.zip .
 
 unzip endblock-ws-server.zip
+
+
+
+$ rm -r *
+[ec2-user@ip-172-31-36-48 logs]$ ls
+[ec2-user@ip-172-31-36-48 logs]$ df -h
