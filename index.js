@@ -3,9 +3,9 @@ const { Web3 } = require("web3");
 const cors = require("cors");
 require("dotenv").config();
 
-const autoPools = require("./services/autoPools");
+// const autoPools = require("./services/autoPools");
 const autoPoolsOnly = require("./services/autoPoolsOnly");
-const pools = require("./services/pools");
+// const pools = require("./services/pools");
 
 const app = express();
 const server = require("http").createServer(app);
@@ -21,29 +21,31 @@ const web3 = new Web3(process.env.RPC);
 app.use(cors());
 app.use(express.static(__dirname + "/public"));
 
-let response = {};
+// let response = {};
 let responseAutoPools = {};
-let poolsData = {}
+// let poolsData = {}
 
 setInterval(async () => {
 
-  try {
-    response = await autoPools.allDatas(web3);
-    console.log(response)
-  } catch (error) {
-    console.log(error);
-  }
-}, 2500);
+    try {
+      responseAutoPools = await autoPoolsOnly.autoPoolsAllData(web3);
+      console.log(responseAutoPools)
+    } catch (error) {
+      console.log(error);
+    }
+  }, 3000);
 
-setInterval(async () => {
+// setInterval(async () => {
 
-  try {
-    responseAutoPools = await autoPoolsOnly.autoPoolsAllData(web3);
-    // console.log(responseAutoPools)
-  } catch (error) {
-    console.log(error);
-  }
-}, 2500);
+//   try {
+//     response = await autoPools.allDatas(web3);
+//     // console.log(response)
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }, 2500);
+
+
 
 
 // pools v3
@@ -61,8 +63,7 @@ io.on("connection", (socket) => {
 
 setInterval(async () => {
   try {
-    io.emit("get-pools-v4", JSON.stringify({...response,...responseAutoPools}));
-    // console.log("emited",{...response,...responseAutoPools} );
+    io.emit("get-pools", JSON.stringify({...responseAutoPools}));
   } catch (error) {
     console.log(error);
   }

@@ -1,10 +1,10 @@
 const web3contract = require("./web3Intancer");
 // const abi = require("../contracts/v4/abis/AutoPOOLEND.json");
 // const abi = require("../contracts/v4/abis/AutoPOOLENDRND.json");
-const abi = require("../contracts/v4/abis/AutoPOOLENDCL.json");
+const abi = require("../contracts/v5/abis/AutoPOOLENDJP.json");
 
 
-const { addresses } = require("../contracts/v4/addresses");
+const { addresses } = require("../contracts/v5/addresses");
 
 const chainId = process.env.CHAIN_ID;
 
@@ -66,45 +66,43 @@ const autoPoolData = async (abi, address, web3) => {
     isLock: isLock,
   };
 };
-const jackpoolData = async (abi, address, web3) => {
+// const jackpoolData = async (abi, address, web3) => {
 
-  const contract = await web3contract.getContract(abi, address, web3);
+//   const contract = await web3contract.getContract(abi, address, web3);
 
-const current = await contract.methods.current().call()
+// const current = await contract.methods.current().call()
 
 
-return {
-    currentPaAmount: current.currentPaAmount.toString(),
-    currentPbAmount: current.currentPbAmount.toString(),
-    currentPcAmount: current.currentPcAmount.toString()
-}
-};
+// return {
+//     currentPaAmount: current.currentPaAmount.toString(),
+//     currentPbAmount: current.currentPbAmount.toString(),
+//     currentPcAmount: current.currentPcAmount.toString()
+// }
+// };
 
-const calcJackPOOLData = async (abi, address, web3) => {
+// const calcJackPOOLData = async (abi, address, web3) => {
 
-    const contract = await web3contract.getContract(abi, address, web3);
-// const config = await contract.methods.config().call()
-    const pooles = await contract.methods.getPOOLES().call()
-// const getProbRates = await contract.methods.getProbRates().call()
-// console.log(getProbRates)
+//     const contract = await web3contract.getContract(abi, address, web3);
+//     const pooles = await contract.methods.getPOOLES().call()
 
-    return {
-        pa: pooles.pa.toString(),
-        pb: pooles.pb.toString(),
-        pc: pooles.pc.toString(),
-        pd: pooles.pd.toString()
-    }
-};
+
+//     return {
+//         pa: pooles.pa.toString(),
+//         pb: pooles.pb.toString(),
+//         pc: pooles.pc.toString(),
+//         pd: pooles.pd.toString()
+//     }
+// };
 
 
 
 const autoPoolsAllData = async (web3) => {
   const response = await Promise.all([
     // autoPoolData(abi, addresses.autoPools.AutoPOOL1[chainId], web3),
+    autoPoolData(abi, addresses.autoPools.AutoPOOL1[chainId], web3),
     autoPoolData(abi, addresses.autoPools.AutoPOOL2[chainId], web3),
     autoPoolData(abi, addresses.autoPools.AutoPOOL3[chainId], web3),
     autoPoolData(abi, addresses.autoPools.AutoPOOL4[chainId], web3),
-    autoPoolData(abi, addresses.autoPools.AutoPOOL5[chainId], web3),
   ]);
 
   return {
